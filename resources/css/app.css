@@ -1,0 +1,9 @@
+/* Normal nav style */
+nav {
+    transition: background-color 0.3s ease;
+}
+
+/* Style when the nav gets a background */
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Change to any color you prefer */
+}
