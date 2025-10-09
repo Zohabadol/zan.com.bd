@@ -19,7 +19,7 @@
                     class="mt-1 block w-full px-3 py-2 border @error('name') border-red-500 @else border-gray-300 @enderror rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     value="{{ old('name') }}">
                 @error('name')
-                    <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -32,9 +32,22 @@
                     class="mt-1 block w-full px-3 py-2 border @error('email') border-red-500 @else border-gray-300 @enderror rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     value="{{ old('email') }}">
                 @error('email')
-                    <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
                 @enderror
             </div>
+            {{-- Phone --}}
+            <div class="mb-4">
+                <label for="phone" class="block text-sm font-medium text-gray-700">
+                    {{ __('Phone') }}
+                </label>
+                <input id="phone" name="phone" type="text" required autocomplete="phone"
+                    class="mt-1 block w-full px-3 py-2 border @error('phone') border-red-500 @else border-gray-300 @enderror rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    value="{{ old('phone') }}">
+                @error('phone')
+                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
 
             {{-- Password --}}
             <div class="mb-4">
@@ -44,7 +57,7 @@
                 <input id="password" name="password" type="password" required autocomplete="new-password"
                     class="mt-1 block w-full px-3 py-2 border @error('password') border-red-500 @else border-gray-300 @enderror rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 @error('password')
-                    <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
                 @enderror
             </div>
 

@@ -109,28 +109,28 @@
         .delay-1::before {
             content: "";
             position: absolute;
-             
+
             left: 50%;
             transform: translateX(-50%);
             height: 2px;
             width: 0;
             background: #fb923c;
             transition: width 0.4s ease-in-out;
-           
+
         }
 
         .delay-1:hover::before {
             width: 100%;
         }
-      
-       .delay-12::before{
-        content: "";
+
+        .delay-12::before {
+            content: "";
             position: absolute;
             top: 0;
             height: 2px;
-        width: 100%;
-        background: #fb923c;
-       }
+            width: 100%;
+            background: #fb923c;
+        }
     </style>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -140,8 +140,9 @@
 
 <body class=" text-gray-800 font-[Montserrat]">
     {{-- Navbar --}}
-    <div id="navbar"
-        class="fixed top-0 w-full   left-0 right-0 text-white z-50  transition-all duration-500 ease-in-out ">
+    <div id="navbar "
+
+        class="fixed top-0 w-full   left-0 right-0 text-white z-50  transition-all duration-500 ease-in-out bg-[#4b87aefc]  ">
         <nav id="navbar" class="md:px-20   w-full px-6">
             <!-- Top bar -->
             <div class="w-full flex items-center justify-between">
@@ -167,17 +168,45 @@
                 </div>
 
                 <!-- Desktop menu -->
-                <ul id="navMenu" class="hidden md:flex md:space-x-6 text-sm menu-slide">
-                    <li class="menu-item delay-1" style="--i: 1"><a href="#home"
-                            class="text-orange-400 text-lg font-bold font-bengali">Home</a></li>
-                    <li class="menu-item delay-1" style="--i: 2"><a href="#about"
-                            class="text-white hover:text-orange-400 text-lg font-bold">About</a></li>
-                    <li class="menu-item delay-1" style="--i: 3"><a href="#service"
-                            class="text-white hover:text-orange-400 text-lg font-bold">Services</a></li>
+                <ul id="navMenu" class="hidden md:flex md:space-x-6 text-sm menu-slide relative">
+                    <li class="menu-item delay-1" style="--i: 1">
+                        <a href="#home" class="text-orange-400 text-lg font-bold font-bengali">Home</a>
+                    </li>
+
+                    <!-- About with Popup -->
+                    <!-- About with Popup -->
+                    <li class="menu-item delay-700 relative" style="--i: 2" id="about-menu">
+                        <a href="#about" class="text-white hover:text-orange-400 text-lg font-bold pb-20">About</a>
+
+                        <!-- Popup -->
+                        <div class="absolute left-0 mt-2 w-52 bg-white !text-black rounded shadow-lg
+        opacity-0 invisible transition-opacity duration-300 z-50"
+                            id="about-popup">
+                            <ul class="p-0 m-0">
+                                <li class="block border-b border-gray-200">
+                                    <!-- <a href="#about-us" class="block px-4 py-4 hover:bg-orange-100 !text-black">About Us</a> -->
+                                     <a href="{{ url('/about') }}" class="block px-4 py-4 hover:bg-orange-100 !text-black">About Us</a>
+                                </li>
+                                <li class="block border-b border-gray-200">
+                                    <a href="#history" class="block px-4 py-4 hover:bg-orange-100 !text-black">History</a>
+                                </li>
+                                <li class="block">
+                                    <a href="#mission" class="block px-4 py-4 hover:bg-orange-100 !text-black">Mission</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                    <li class="menu-item delay-1" style="--i: 3">
+                        <a href="#service" class="text-white hover:text-orange-400 text-lg font-bold">Services</a>
+                    </li>
+
                     <li class="menu-item delay-1" style="--i: 4">
                         <a href="#contact" class="text-white hover:text-orange-400 text-lg font-bold">Contact</a>
                     </li>
                 </ul>
+
             </div>
             <!-- Mobile Menu -->
             <ul id="menu" class="hidden bg-[#394257] rounded-lg flex-col mt-4 space-y-4 md:hidden text-sm p-6">
@@ -188,6 +217,74 @@
             </ul>
         </nav>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutMenu = document.getElementById('about-menu');
+            const aboutPopup = document.getElementById('about-popup');
+
+            // Popup শুরুতে top-16
+            aboutPopup.style.top = "4rem"; // top-16 = 4rem
+            aboutPopup.style.transition = "top 1s ease";
+
+            const showPopup = () => {
+                aboutPopup.style.top = "3rem"; // top-12 = 3rem
+            };
+
+            const hidePopup = () => {
+                aboutPopup.style.top = "4rem"; // top-16 = 4rem
+            };
+
+            aboutMenu.addEventListener('mouseenter', showPopup);
+            aboutPopup.addEventListener('mouseenter', showPopup);
+
+            aboutMenu.addEventListener('mouseleave', (e) => {
+                const toElement = e.relatedTarget || e.toElement;
+                if (!aboutPopup.contains(toElement)) hidePopup();
+            });
+
+            aboutPopup.addEventListener('mouseleave', (e) => {
+                const toElement = e.relatedTarget || e.toElement;
+                if (!aboutMenu.contains(toElement)) hidePopup();
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('nav'); // পুরো navbar ধরলাম
+            const aboutMenu = document.getElementById('about-menu');
+            const aboutPopup = document.getElementById('about-popup');
+
+            const showPopup = () => {
+                aboutPopup.classList.remove('opacity-0', 'invisible');
+                aboutPopup.classList.add('opacity-100', 'visible');
+            };
+
+            const hidePopup = () => {
+                aboutPopup.classList.remove('opacity-100', 'visible');
+                aboutPopup.classList.add('opacity-0', 'invisible');
+            };
+
+            // Show popup when hovering about or popup
+            aboutMenu.addEventListener('mouseenter', showPopup);
+            aboutPopup.addEventListener('mouseenter', showPopup);
+
+            // Hide popup only when leaving navbar entirely
+            navbar.addEventListener('mouseleave', (e) => {
+                hidePopup();
+            });
+
+            // Optional smooth hover
+            aboutMenu.addEventListener('mouseleave', (e) => {
+                const toElement = e.relatedTarget || e.toElement;
+                if (!aboutPopup.contains(toElement)) {
+                    hidePopup();
+                }
+            });
+        });
+    </script>
+
     {{-- navbar scrolling function code here  --}}
     <script>
         window.addEventListener("scroll", function() {
@@ -217,15 +314,15 @@
             function setActiveLink(currentId) {
                 navLinks.forEach(link => {
                     const href = link.getAttribute('href').replace('#', '');
-                   
+
                     if (href === currentId) {
                         history.replaceState(null, null, `#${href}`);
-                        link.classList.add('text-orange-400' );
-                        link.classList.add('delay-12' );
+                        link.classList.add('text-orange-400');
+                        link.classList.add('delay-12');
                         link.classList.remove('text-white');
                     } else {
-                        link.classList.remove('delay-12'    );
-                        link.classList.remove('text-orange-400'    );
+                        link.classList.remove('delay-12');
+                        link.classList.remove('text-orange-400');
                         link.classList.add('text-white');
                     }
                 });
@@ -462,8 +559,8 @@
                     const selectedCategoryId = this.getAttribute('data-category-id');
 
                     // Highlight the selected category
-                    categoryButtons.forEach(btn => btn.classList.remove('text-orange-500','bg-gray-200'));
-                    this.classList.add('text-orange-500','bg-gray-200');
+                    categoryButtons.forEach(btn => btn.classList.remove('text-orange-500', 'bg-gray-200'));
+                    this.classList.add('text-orange-500', 'bg-gray-200');
 
                     // Filter services
                     const filteredCards = selectedCategoryId === 'null' ?
@@ -502,7 +599,7 @@
                 <div class="text-2xl font-bold"><img src="/images/zan-logo.png" alt="Logo"
                         class="h-12 md:h-16 w-auto"></div>
                 <p class="text-sm mb-6">
-                  Empowering Everyday Needs – From Stationery to Software.
+                    Empowering Everyday Needs – From Stationery to Software.
                 </p>
 
                 <div class="flex space-x-4">
@@ -553,7 +650,7 @@
             </div>
 
             <!-- Our Services -->
-          
+
 
             <!-- Contact Us -->
             <div class="">

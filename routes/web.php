@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ClientsController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\HomeServiceController; 
+use App\Http\Controllers\HomeServiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,10 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('banner/create', [BannerController::class, 'create'])->name('banner.create');
@@ -41,5 +45,3 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/services/filter', [HomeServiceController::class, 'filter']);
     Route::get('/contact', [ContactController::class, 'showMessages'])->name('contact.index');
 });
-
-
