@@ -168,23 +168,22 @@
                 </div>
 
                 <!-- Desktop menu -->
-                <ul id="navMenu" class="hidden md:flex md:space-x-6 text-sm menu-slide relative">
+                <!-- <ul id="navMenu" class="hidden md:flex md:space-x-6 text-sm menu-slide relative">
                     <li class="menu-item delay-1" style="--i: 1">
                         <a href="#home" class="text-orange-400 text-lg font-bold font-bengali">Home</a>
                     </li>
 
-                    <!-- About with Popup -->
-                    <!-- About with Popup -->
-                    <li class="menu-item delay-700 relative" style="--i: 2" id="about-menu">
-                        <a href="#about" class="text-white hover:text-orange-400 text-lg font-bold pb-20">About</a>
 
-                        <!-- Popup -->
+                    <li class="menu-item delay-700 relative" style="--i: 2" id="about-menu">
+                        <a href="" class="text-white hover:text-orange-400 text-lg font-bold pb-20">About</a>
+
+                       
                         <div class="absolute left-0 mt-2 w-52 bg-white !text-black rounded shadow-lg
         opacity-0 invisible transition-opacity duration-300 z-50"
                             id="about-popup">
                             <ul class="p-0 m-0">
                                 <li class="block border-b border-gray-200">
-                                    <!-- <a href="#about-us" class="block px-4 py-4 hover:bg-orange-100 !text-black">About Us</a> -->
+                                    
                                      <a href="{{ url('/about') }}" class="block px-4 py-4 hover:bg-orange-100 !text-black">About Us</a>
                                 </li>
                                 <li class="block border-b border-gray-200">
@@ -205,7 +204,103 @@
                     <li class="menu-item delay-1" style="--i: 4">
                         <a href="#contact" class="text-white hover:text-orange-400 text-lg font-bold">Contact</a>
                     </li>
+                </ul> -->
+                <!-- <ul id="navMenu" class="hidden md:flex md:space-x-6 text-sm menu-slide relative">
+                  
+                    <li class="menu-item delay-1" style="--i: 1">
+                        <a href="{{ url('/#home') }}" class="!text-orange-400 text-lg font-bold font-bengali">Home</a>
+                    </li>
+
+                   
+                    <li class="menu-item delay-700 relative" style="--i: 2" id="about-menu">
+                        <a href="{{ url('/about') }}" class="text-white hover:text-orange-400 text-lg font-bold pb-20">About</a>
+
+                      
+                        <div class="absolute left-0 mt-2 w-52 bg-white !text-black rounded shadow-lg
+        opacity-0 invisible transition-opacity duration-300 z-50" id="about-popup">
+                            <ul class="p-0 m-0">
+                                <li class="block border-b border-gray-200">
+                                    <a href="{{ url('/about#about-us') }}" class="block px-4 py-4 hover:bg-orange-100 !text-black">About Us</a>
+                                </li>
+                                <li class="block border-b border-gray-200">
+                                    <a href="{{ url('/about#history') }}" class="block px-4 py-4 hover:bg-orange-100 !text-black">History</a>
+                                </li>
+                                <li class="block">
+                                    <a href="{{ url('/about#mission') }}" class="block px-4 py-4 hover:bg-orange-100 !text-black">Mission</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                 
+                    <li class="menu-item delay-1" style="--i: 3">
+                        <a href="{{ url('/#service') }}" class="text-white hover:text-orange-400 text-lg font-bold">Services</a>
+                    </li>
+
+                    <li class="menu-item delay-1" style="--i: 4">
+                        <a href="{{ url('/#contact') }}" class="text-white hover:text-orange-400 text-lg font-bold">Contact</a>
+                    </li>
+                </ul> -->
+                <ul id="navMenu" class="hidden md:flex md:space-x-6 text-sm menu-slide relative">
+                    <!-- HOME -->
+                    <li class="menu-item delay-1" style="--i: 1">
+                        <a href="{{ url('/') }}"
+                            class="text-lg font-bold font-bengali {{ request()->is('/') ? 'text-orange-400' : 'text-white hover:text-orange-400' }}">
+                            Home
+                        </a>
+                    </li>
+
+                    <!-- ABOUT with Popup -->
+                    <li class="menu-item delay-700 relative" style="--i: 2" id="about-menu">
+                        <a href="{{ url('/about') }}"
+                            class="text-lg font-bold pb-20 {{ request()->is('about') ? 'text-orange-400' : 'text-white hover:text-orange-400' }}">
+                            About
+                        </a>
+
+                        <!-- Popup -->
+                        <div class="absolute left-0 mt-2 w-52 bg-white !text-black rounded shadow-lg
+        opacity-0 invisible transition-opacity duration-300 z-50" id="about-popup">
+                            <ul class="p-0 m-0">
+                                <li class="block border-b border-gray-200">
+                                    <a href="{{ url('/about#about-us') }}"
+                                        class="block px-4 py-4 hover:bg-orange-100 !text-black {{ request()->is('about') ? 'font-semibold text-orange-500' : '' }}">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li class="block border-b border-gray-200">
+                                    <a href="{{ url('/about#history') }}"
+                                        class="block px-4 py-4 hover:bg-orange-100 !text-black {{ request()->is('about') ? 'font-semibold text-orange-500' : '' }}">
+                                        History
+                                    </a>
+                                </li>
+                                <li class="block">
+                                    <a href="{{ url('/about#mission') }}"
+                                        class="block px-4 py-4 hover:bg-orange-100 !text-black {{ request()->is('about') ? 'font-semibold text-orange-500' : '' }}">
+                                        Mission
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- SERVICES -->
+                    <li class="menu-item delay-1" style="--i: 3">
+                        <a href="{{ url('/#service') }}"
+                            class="text-lg font-bold {{ request()->is('/') ? 'text-white hover:text-orange-400' : 'text-white hover:text-orange-400' }}">
+                            Services
+                        </a>
+                    </li>
+
+                    <!-- CONTACT -->
+                    <li class="menu-item delay-1" style="--i: 4">
+                        <a href="{{ url('/#contact') }}"
+                            class="text-lg font-bold {{ request()->is('/') ? 'text-white hover:text-orange-400' : 'text-white hover:text-orange-400' }}">
+                            Contact
+                        </a>
+                    </li>
                 </ul>
+
+
 
             </div>
             <!-- Mobile Menu -->
