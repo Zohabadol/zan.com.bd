@@ -67,7 +67,7 @@
             <div class="">
                 <div class="relative">
                     <h2 class="text-7xl font-bold text-gray-300 mb-4">MISSION</h2>
-                    <h2 class="text-xl font-medium text-gray-900  absolute top-5">MISSION</h2>
+                    <h2 class="text-xl font-medium text-gray-900  absolute top-6">MISSION</h2>
                 </div>
 
                 <p class="text-gray-600 leading-relaxed mb-12">
@@ -78,7 +78,7 @@
                 <!-- <h2 class="text-7xl font-bold text-gray-300 mb-4">VISION</h2> -->
                 <div class="relative">
                     <h2 class="text-7xl font-bold text-gray-300 mb-4">VISION</h2>
-                    <h2 class="text-xl font-medium text-gray-900  absolute top-5">VISION</h2>
+                    <h2 class="text-xl font-medium text-gray-900  absolute top-6">VISION</h2>
                 </div>
                 <p class="text-gray-600 leading-relaxed">
                     We envision to sustain and grow as a diversified global conglomerate.
@@ -156,13 +156,13 @@
             </h2>
 
             {{-- Directors Grid --}}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {{-- Director 1 --}}
                 <div class="text-center">
-                    <img src="{{ asset('images/diroctors/whad.jpg') }}" alt="Abdul Wahed"
+                    <img src="{{ asset('images/diroctors/03.jpg') }}" alt="A K M Badruzzoha"
                         class="w-full h-[420px] object-cover rounded-md shadow-md">
 
-                    <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">Abdul Wahed</h3>
+                    <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">A K M Badruzzoha</h3>
                     <p class="text-gray-600 text-sm mt-1">Chairman</p>
 
                     <button
@@ -172,17 +172,16 @@
                     </button>
 
                     <div id="bio1" class="bio hidden mt-3 text-gray-600 text-sm leading-relaxed px-3">
-                        Abdul Wahed is the founding Chairman who has led the organization
-                        with integrity, vision, and a commitment to excellence for over three decades.
+                        A K M Badruzzoha is the founding Chairman who has led the organization with integrity, vision, and a commitment to excellence.
                     </div>
                 </div>
 
                 {{-- Director 2 --}}
                 <div class="text-center">
-                    <img src="{{ asset('images/diroctors/jabbar.jpg') }}" alt="M. A. Jabbar"
+                    <img src="{{ asset('images/diroctors/01.jpg') }}" alt="Aziza Akter"
                         class="w-full h-[420px] object-cover rounded-md shadow-md">
 
-                    <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">M. A. Jabbar</h3>
+                    <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">Aziza Akter</h3>
                     <p class="text-gray-600 text-sm mt-1">Managing Director</p>
 
                     <button
@@ -192,18 +191,18 @@
                     </button>
 
                     <div id="bio2" class="bio hidden mt-3 text-gray-600 text-sm leading-relaxed px-3">
-                        M. A. Jabbar has played a pivotal role in expanding the company globally,
+                        Aziza Akter has played a pivotal role in expanding the company globally,
                         ensuring innovation and sustainability at every level.
                     </div>
                 </div>
 
                 {{-- Director 3 --}}
                 <div class="text-center">
-                    <img src="{{ asset('images/diroctors/rahim.jpg') }}" alt="M. A. Rahim"
+                    <img src="{{ asset('images/diroctors/02.jpg') }}" alt="Nahian Tahamin"
                         class="w-full h-[420px] object-cover rounded-md shadow-md">
 
-                    <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">M. A. Rahim</h3>
-                    <p class="text-gray-600 text-sm mt-1">Vice Chairman</p>
+                    <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">Nahian Tahamin</h3>
+                    <p class="text-gray-600 text-sm mt-1">Chief Executive Officer</p>
 
                     <button
                         class="read-bio-btn text-green-600 font-semibold text-sm mt-2 inline-flex items-center gap-1 hover:text-green-700 transition"
@@ -212,30 +211,12 @@
                     </button>
 
                     <div id="bio3" class="bio hidden mt-3 text-gray-600 text-sm leading-relaxed px-3">
-                        M. A. Rahim has contributed to strategic development, leadership,
+                        Nahian Tahamin has contributed to strategic development, leadership,
                         and strengthening corporate governance within the company.
                     </div>
                 </div>
 
-                {{-- Director 4 --}}
-                <div class="text-center">
-                    <img src="{{ asset('images/diroctors/quadir.jpg') }}" alt="M. A. Quader"
-                        class="w-full h-[420px] object-cover rounded-md shadow-md">
 
-                    <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">M. A. Quader</h3>
-                    <p class="text-gray-600 text-sm mt-1">Deputy Managing Director &amp; Group CEO</p>
-
-                    <button
-                        class="read-bio-btn text-green-600 font-semibold text-sm mt-2 inline-flex items-center gap-1 hover:text-green-700 transition "
-                        data-target="bio4">
-                        Read Bio <span class="arrow text-green-600 ">▼</span>
-                    </button>
-
-                    <div id="bio4" class="bio hidden mt-3 text-gray-600 text-sm leading-relaxed px-3">
-                        M. A. Quader oversees group operations and drives business transformation
-                        through innovation and strategic partnerships.
-                    </div>
-                </div>
             </div>
         </div>
 

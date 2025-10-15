@@ -253,7 +253,7 @@
                     <!-- ABOUT with Popup -->
                     <li class="menu-item delay-700 relative" style="--i: 2" id="about-menu">
                         <a href="{{ url('/about') }}"
-                            class="text-lg font-bold pb-20 {{ request()->is('about') ? 'text-orange-400' : 'text-white hover:text-orange-400' }}">
+                            class="text-lg font-bold pb-12 {{ request()->is('about') ? 'text-orange-400' : 'text-white hover:text-orange-400' }} ">
                             About
                         </a>
 
