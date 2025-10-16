@@ -144,7 +144,8 @@
             </h2>
 
             {{-- Directors Grid --}}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {{-- Director 1 --}}
                 <div class="text-center">
                     <img src="{{ asset('images/diroctors/03.jpg') }}" alt="A K M Badruzzoha"
@@ -185,7 +186,7 @@
                 </div>
 
                 {{-- Director 3 --}}
-                <div class="text-center">
+                <div class="text-center md:col-span-2 lg:col-span-1 md:mx-auto">
                     <img src="{{ asset('images/diroctors/02.JPG') }}" alt="Nahian Tahamin"
                         class="w-full h-[420px] object-cover rounded-md shadow-md">
 
@@ -203,9 +204,10 @@
                         and strengthening corporate governance within the company.
                     </div>
                 </div>
-
-
             </div>
+
+
+
         </div>
 
         {{-- Simple JavaScript --}}
