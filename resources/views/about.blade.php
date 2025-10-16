@@ -166,7 +166,7 @@
 
                 {{-- Director 2 --}}
                 <div class="text-center">
-                    <img src="{{ asset('images/diroctors/01.jpg') }}" alt="Aziza Akter"
+                    <img src="{{ asset('images/diroctors/01.JPG') }}" alt="Aziza Akter"
                         class="w-full h-[420px] object-cover rounded-md shadow-md">
 
                     <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">Aziza Akter</h3>
@@ -186,7 +186,7 @@
 
                 {{-- Director 3 --}}
                 <div class="text-center">
-                    <img src="{{ asset('images/diroctors/02.jpg') }}" alt="Nahian Tahamin"
+                    <img src="{{ asset('images/diroctors/02.JPG') }}" alt="Nahian Tahamin"
                         class="w-full h-[420px] object-cover rounded-md shadow-md">
 
                     <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">Nahian Tahamin</h3>
