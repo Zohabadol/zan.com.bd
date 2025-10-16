@@ -13,20 +13,8 @@
 <!-- About Content -->
 <section class="container mx-auto py-16 px-4  text-gray-700">
     <div class="max-w-7xl mx-auto mb-10">
-        <p class="mb-6">
-            <strong>DBL Group</strong> is a family owned business which started in 1991.
-            The first company was named <strong>Dulal Brothers Limited</strong>. Over the years,
-            the organization evolved into a diversified conglomerate in Bangladesh.
-            The businesses include Apparel, Textiles, Textile Printing, Washing,
-            Garments Accessories, Packaging, Ceramic Tiles, Pharmaceuticals,
-            Dredging, Retail, and Digital Transformation Services.
-        </p>
-        <p>
-            UN Development Program Business Call to Action has recognized our activities
-            to be aligned with UN Sustainable Development Goals. In addition to working
-            with international development organizations such as CARE, DEG, IFC, GIZ, ILO,
-            and UNICEF, DBL has a diverse set of sustainability programs.
-        </p>
+        <p class="mb-6"> <strong>Zan Limited</strong> is a technology-driven software company founded with a vision to redefine digital solutions across industries. From custom enterprise applications and AI-powered tools to cloud services and mobile apps, we deliver innovative and scalable software that empowers businesses to reach their full potential. </p>
+        <p> Our team of expert developers, UX/UI designers, and consultants work closely with clients—from startups to established enterprises—to solve complex challenges with cutting-edge technologies such as machine learning, automation, and data analytics. At Zan.com.bd, we uphold the highest standards of quality, security, and sustainability in every project, ensuring long-term value and transformative growth. </p>
     </div>
 
     <!-- Stats Section -->
@@ -60,7 +48,7 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 py-16 ">
+    <div id="mission-vision" class="max-w-7xl mx-auto px-6 py-16 ">
         {{-- Mission & Vision Section --}}
         <div class="grid md:grid-cols-2 gap-16 items-center">
             {{-- Left Column --}}
@@ -149,7 +137,7 @@
     </section>
 
     <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div id="directors" class="max-w-7xl mx-auto px-6 md:px-10">
             {{-- Section Title --}}
             <h2 class="text-lg font-semibold text-gray-900 uppercase mb-10">
                 Board of Directors
@@ -244,13 +232,13 @@
             });
         </script>
     </section>
-    <section class="py-16 max-w-7xl mx-auto px-6 md:px-10">
+    <!-- <section class="py-16 max-w-7xl mx-auto px-6 md:px-10">
         <h2 class="text-lg font-semibold text-gray-800 mb-8 uppercase tracking-wide">
             Awards & Achievements
         </h2>
 
         <div class="grid md:grid-cols-3 gap-10">
-            <!-- Card 1 -->
+            
             <div class="group">
                 <div class="overflow-hidden rounded-lg">
                     <img src="{{ asset('images/award1.jpg') }}" alt="Award 1"
@@ -264,7 +252,7 @@
                 </div>
             </div>
 
-            <!-- Card 2 -->
+          
             <div class="group">
                 <div class="overflow-hidden rounded-lg">
                     <img src="{{ asset('images/award2.jpg') }}" alt="Award 2"
@@ -278,7 +266,7 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
+        
             <div class="group">
                 <div class="overflow-hidden rounded-lg">
                     <img src="{{ asset('images/award3.jpg') }}" alt="Award 3"
@@ -293,7 +281,7 @@
             </div>
         </div>
 
-        <!-- View All Button -->
+     
         <div class="flex justify-start mt-12">
             <a href="{{ url('/awards') }}"
                 class="inline-flex items-center border border-gray-300 px-6 py-3 rounded-md text-gray-800 font-medium hover:bg-gray-100 transition">
@@ -305,7 +293,7 @@
                 </svg>
             </a>
         </div>
-    </section>
+    </section> -->
 
 
 </section>

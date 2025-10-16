@@ -106,18 +106,7 @@
             position: relative;
         }
 
-        .delay-1::before {
-            content: "";
-            position: absolute;
 
-            left: 50%;
-            transform: translateX(-50%);
-            height: 2px;
-            width: 0;
-            background: #fb923c;
-            transition: width 0.4s ease-in-out;
-
-        }
 
         .delay-1:hover::before {
             width: 100%;
@@ -131,9 +120,30 @@
             width: 100%;
             background: #fb923c;
         }
+
+        .transition-transform {
+            transition: transform 0.3s ease;
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
     </style>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- .delay-1::before {
+            content: "";
+            position: absolute;
+
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 0;
+            background: #fb923c;
+            transition: width 0.4s ease-in-out;
+
+        } -->
 
 
 </head>
@@ -244,8 +254,9 @@
                 <ul id="navMenu" class="hidden md:flex md:space-x-6 text-sm menu-slide relative">
                     <!-- HOME -->
                     <li class="menu-item delay-1" style="--i: 1">
+
                         <a href="{{ url('/') }}"
-                            class="text-lg font-bold font-bengali {{ request()->is('/') ? 'text-orange-400' : 'text-white hover:text-orange-400' }}">
+                            class="text-lg font-bold font-bengali {{ request()->is('/') ? '' : 'text-white ' }}">
                             Home
                         </a>
                     </li>
@@ -253,7 +264,8 @@
                     <!-- ABOUT with Popup -->
                     <li class="menu-item delay-700 relative" style="--i: 2" id="about-menu">
                         <a href="{{ url('/about') }}"
-                            class="text-lg font-bold pb-12 {{ request()->is('about') ? 'text-orange-400' : 'text-white hover:text-orange-400' }} ">
+
+                            class="text-lg font-bold pb-12 {{ request()->is('') ? '' : 'text-white ' }} ">
                             About
                         </a>
 
@@ -262,21 +274,23 @@
         opacity-0 invisible transition-opacity duration-300 z-50" id="about-popup">
                             <ul class="p-0 m-0">
                                 <li class="block border-b border-gray-200">
+
                                     <a href="{{ url('/about#about-us') }}"
+
                                         class="block px-4 py-4 hover:bg-orange-100 !text-black {{ request()->is('about') ? 'font-semibold text-orange-500' : '' }}">
                                         About Us
                                     </a>
                                 </li>
                                 <li class="block border-b border-gray-200">
-                                    <a href="{{ url('/about#history') }}"
+                                    <a href="#mission-vision"
                                         class="block px-4 py-4 hover:bg-orange-100 !text-black {{ request()->is('about') ? 'font-semibold text-orange-500' : '' }}">
-                                        History
+                                        Mission, Vision & Value
                                     </a>
                                 </li>
                                 <li class="block">
-                                    <a href="{{ url('/about#mission') }}"
+                                    <a href="#directors"
                                         class="block px-4 py-4 hover:bg-orange-100 !text-black {{ request()->is('about') ? 'font-semibold text-orange-500' : '' }}">
-                                        Mission
+                                        Board Of Directors
                                     </a>
                                 </li>
                             </ul>
@@ -286,15 +300,15 @@
                     <!-- SERVICES -->
                     <li class="menu-item delay-1" style="--i: 3">
                         <a href="{{ url('/#service') }}"
-                            class="text-lg font-bold {{ request()->is('/') ? 'text-white hover:text-orange-400' : 'text-white hover:text-orange-400' }}">
+                            class="text-lg font-bold {{ request()->is('/#service') ? 'text-white ' : 'text-white ' }}">
                             Services
                         </a>
                     </li>
 
                     <!-- CONTACT -->
-                    <li class="menu-item delay-1" style="--i: 4">
+                    <li class="menu-item delay-1">
                         <a href="{{ url('/#contact') }}"
-                            class="text-lg font-bold {{ request()->is('/') ? 'text-white hover:text-orange-400' : 'text-white hover:text-orange-400' }}">
+                            class="text-lg font-bold {{ request()->is('/') ? 'text-white ' : 'text-white ' }}">
                             Contact
                         </a>
                     </li>
@@ -305,11 +319,12 @@
             </div>
             <!-- Mobile Menu -->
             <ul id="menu" class="hidden bg-[#394257] rounded-lg flex-col mt-4 space-y-4 md:hidden text-sm p-6">
-                <li><a href="#home" class="text-orange-400 font-medium menu-link">Home</a></li>
-                <li><a href="#about" class="text-white hover:text-orange-400 menu-link">About</a></li>
+                <li><a href="{{ url('/') }}" class="text-orange-400 font-medium menu-link">Home</a></li>
+                <li><a href="{{ url('/about#about-us') }}" class="text-white hover:text-orange-400 menu-link">About</a></li>
                 <li><a href="#service" class="text-white hover:text-orange-400 menu-link">Services</a></li>
                 <li><a href="#contact" class="text-white hover:text-orange-400 menu-link">Contact</a></li>
             </ul>
+
         </nav>
     </div>
 
@@ -476,6 +491,30 @@
         });
     </script>
 
+    <!-- -------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const aboutToggle = document.getElementById("about-toggle");
+            const aboutDropdown = document.getElementById("about-dropdown");
+            const aboutArrow = document.getElementById("about-arrow");
+
+            aboutToggle.addEventListener("click", (e) => {
+                e.preventDefault();
+                aboutDropdown.classList.toggle("hidden");
+                aboutArrow.classList.toggle("rotate-180");
+            });
+
+            // যখন dropdown এর কোনো লিংকে ক্লিক হবে → dropdown বন্ধ হবে
+            aboutDropdown.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    aboutDropdown.classList.add("hidden");
+                    aboutArrow.classList.remove("rotate-180");
+                });
+            });
+        });
+    </script>
+
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -485,7 +524,7 @@
                     slidesPerView: 1,
                     spaceBetween: 20,
                     autoplay: {
-                        delay: 2000, // 3 seconds
+                        delay: 2000,
                         disableOnInteraction: false,
                     },
                     pagination: {
