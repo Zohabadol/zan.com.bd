@@ -5,7 +5,7 @@
 <!-- Hero Section -->
 <section
     class="relative h-[400px] flex items-center justify-center bg-cover bg-center"
-    style="background-image: url('{{ asset('images/about-hero.jpg') }}');">
+    style="background-image: url('{{ asset('images/about-hero-min.jpg') }}');">
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     <h1 class="relative text-white text-5xl font-extrabold z-10">ABOUT US</h1>
 </section>
@@ -13,40 +13,41 @@
 <!-- About Content -->
 <section class="container mx-auto py-16 px-4  text-gray-700">
     <div class="max-w-7xl mx-auto mb-10">
-        <p class="mb-6"> <strong>Zan Limited</strong> is a technology-driven software company founded with a vision to redefine digital solutions across industries. From custom enterprise applications and AI-powered tools to cloud services and mobile apps, we deliver innovative and scalable software that empowers businesses to reach their full potential. </p>
-        <p> Our team of expert developers, UX/UI designers, and consultants work closely with clients—from startups to established enterprises—to solve complex challenges with cutting-edge technologies such as machine learning, automation, and data analytics. At Zan.com.bd, we uphold the highest standards of quality, security, and sustainability in every project, ensuring long-term value and transformative growth. </p>
+        <p class="mb-6"> <strong>Zan Limited</strong> is a diversified company based in Dhaka, Bangladesh, specializing in <strong> IT solutions, e-commerce, and global import and export trade </strong> . Through our brands- <strong>ZAN Vision Labs and ZAN Mart </strong>– we connect innovation, technology, and trade to serve both local and international clients. </p>
+        <p> Our mission is to deliver <strong> quality, trust, and technology </strong> under one name. Whether it’s developing under one name. Whether it’s developing advanced software, offering premium imported goods, or creating digital learning platforms,<strong> ZAN </strong> is committed to <strong> excellence and customer satisfaction.</strong></p>
+        <p>Driven by integrity, innovation and teamwork,<strong> ZAN </strong> believes in building partnerships through <strong> trust and professionalism.</strong></p>
     </div>
 
     <!-- Stats Section -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 border-t border-gray-300 pt-10">
-        <!-- Item 1 -->
+    <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 border-t border-gray-300 pt-10 ">
+        
         <div class="flex flex-col items-center">
             <h2 class="text-4xl font-extrabold text-gray-900">33</h2>
             <p class="text-gray-600 font-medium">Years</p>
             <p class="text-sm text-gray-500 mt-1">Experience</p>
         </div>
 
-        <!-- Item 2 -->
+       
         <div class="flex flex-col items-center border-l md:border-l border-gray-300">
             <h2 class="text-4xl font-extrabold text-gray-900">24</h2>
             <p class="text-gray-600 font-medium">Business</p>
             <p class="text-sm text-gray-500 mt-1">Concerns</p>
         </div>
 
-        <!-- Item 3 -->
+       
         <div class="flex flex-col items-center border-t md:border-l md:border-t-0 border-gray-300 pt-6 md:pt-0">
             <h2 class="text-4xl font-extrabold text-gray-900">50K</h2>
             <p class="text-gray-600 font-medium">Dedicated</p>
             <p class="text-sm text-gray-500 mt-1">Personnel</p>
         </div>
 
-        <!-- Item 4 -->
+        
         <div class="flex flex-col items-center border-t md:border-l md:border-t-0 border-gray-300 pt-6 md:pt-0">
             <h2 class="text-4xl font-extrabold text-gray-900">1B</h2>
             <p class="text-gray-600 font-medium">USD Annual</p>
             <p class="text-sm text-gray-500 mt-1">Turnover</p>
         </div>
-    </div>
+    </div> -->
 
     <div id="mission-vision" class="max-w-7xl mx-auto px-6 py-16 ">
         {{-- Mission & Vision Section --}}
@@ -157,7 +158,7 @@
                     <button
                         class="read-bio-btn text-green-600 font-semibold text-sm mt-2 inline-flex items-center gap-1 hover:text-green-700 transition"
                         data-target="bio1">
-                        Read Bio <span class="arrow text-green-600">▼</span>
+                        Read Bio <span class="arrow text-green-600">v</span>
                     </button>
 
                     <div id="bio1" class="bio hidden mt-3 text-gray-600 text-sm leading-relaxed px-3">
@@ -176,7 +177,7 @@
                     <button
                         class="read-bio-btn text-green-600 font-semibold text-sm mt-2 inline-flex items-center gap-1 hover:text-green-700 transition"
                         data-target="bio2">
-                        Read Bio <span class="arrow text-green-600">▼</span>
+                        Read Bio <span class="arrow text-green-600">v</span>
                     </button>
 
                     <div id="bio2" class="bio hidden mt-3 text-gray-600 text-sm leading-relaxed px-3">
@@ -196,7 +197,7 @@
                     <button
                         class="read-bio-btn text-green-600 font-semibold text-sm mt-2 inline-flex items-center gap-1 hover:text-green-700 transition"
                         data-target="bio3">
-                        Read Bio <span class="arrow text-green-600">▼</span>
+                        Read Bio <span class="arrow text-green-600">v</span>
                     </button>
 
                     <div id="bio3" class="bio hidden mt-3 text-gray-600 text-sm leading-relaxed px-3">
@@ -224,10 +225,10 @@
                         // Toggle visibility
                         if (bio.classList.contains('hidden')) {
                             bio.classList.remove('hidden');
-                            btn.innerHTML = 'Hide Bio <span class="arrow text-green-600">▲</span>';
+                            btn.innerHTML = 'Hide Bio <span class="arrow text-green-600 ">^</span>';
                         } else {
                             bio.classList.add('hidden');
-                            btn.innerHTML = 'Read Bio <span class="arrow text-green-600">▼</span>';
+                            btn.innerHTML = 'Read Bio <span class="arrow text-green-600">v</span>';
                         }
                     });
                 });
