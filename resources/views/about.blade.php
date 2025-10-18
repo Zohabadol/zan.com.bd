@@ -140,20 +140,20 @@
     <section class="py-20 bg-white">
         <div id="directors" class="max-w-7xl mx-auto px-6 md:px-10">
             {{-- Section Title --}}
-            <h2 class="text-lg font-semibold text-gray-900 uppercase mb-10">
+            <h2 class="text-lg font-semibold text-gray-900 uppercase pb-40  ">
                 Board of Directors
             </h2>
 
             {{-- Directors Grid --}}
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                 {{-- Director 1 --}}
-                <div class="text-center">
+                <div class="text-center animate-left ">
                     <img src="{{ asset('images/diroctors/03.jpg') }}" alt="A K M Badruzzoha"
-                        class="w-full h-[420px] object-cover rounded-md shadow-md">
+                        class="w-full h-[420px] object-cover rounded-md shadow-xl">
 
                     <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">A K M Badruzzoha</h3>
-                    <p class="text-gray-600 text-sm mt-1">Chairman</p>
+                    <p class="text-gray-600 text-sm mt-1">Managing Director</p>
 
                     <button
                         class="read-bio-btn text-green-600 font-semibold text-sm mt-2 inline-flex items-center gap-1 hover:text-green-700 transition"
@@ -162,17 +162,17 @@
                     </button>
 
                     <div id="bio1" class="bio hidden mt-3 text-gray-600 text-sm leading-relaxed px-3">
-                        A K M Badruzzoha is the founding Chairman who has led the organization with integrity, vision, and a commitment to excellence.
+                        A K M Badruzzoha is the founding Managing Director who has led the organization with integrity, vision, and a commitment to excellence.
                     </div>
                 </div>
 
                 {{-- Director 2 --}}
-                <div class="text-center">
+                <div class="text-center -mt-20 animate-bottom ">
                     <img src="{{ asset('images/diroctors/01.JPG') }}" alt="Aziza Akter"
-                        class="w-full h-[420px] object-cover rounded-md shadow-md">
+                        class="w-full h-[420px] object-cover rounded-md shadow-xl">
 
                     <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">Aziza Akter</h3>
-                    <p class="text-gray-600 text-sm mt-1">Managing Director</p>
+                    <p class="text-gray-600 text-sm mt-1"> Chairman</p>
 
                     <button
                         class="read-bio-btn text-green-600 font-semibold text-sm mt-2 inline-flex items-center gap-1 hover:text-green-700 transition"
@@ -187,12 +187,12 @@
                 </div>
 
                 {{-- Director 3 --}}
-                <div class="text-center md:col-span-2 lg:col-span-1 md:mx-auto">
+                <div class="text-center md:col-span-2 lg:col-span-1 md:mx-auto animate-right">
                     <img src="{{ asset('images/diroctors/02.JPG') }}" alt="Nahian Tahamin"
-                        class="w-full h-[420px] object-cover rounded-md shadow-md">
+                        class="w-full h-[420px] object-cover rounded-md shadow-xl">
 
                     <h3 class="mt-4 text-xl font-bold text-gray-900 uppercase">Nahian Tahamin</h3>
-                    <p class="text-gray-600 text-sm mt-1">Chief Executive Officer</p>
+                    <p class="text-gray-600 text-sm mt-1">Director</p>
 
                     <button
                         class="read-bio-btn text-green-600 font-semibold text-sm mt-2 inline-flex items-center gap-1 hover:text-green-700 transition"
@@ -210,6 +210,79 @@
 
 
         </div>
+        <style>
+            /* Animation Keyframes */
+            @keyframes slideLeft {
+                from {
+                    transform: translateX(-100px);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideRight {
+                from {
+                    transform: translateX(100px);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideBottom {
+                from {
+                    transform: translateY(100px);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            /* Animation Classes */
+            .animate-left {
+                animation: slideLeft 1.2s ease-out both;
+            }
+
+            .animate-right {
+                animation: slideRight 1.2s ease-out both;
+            }
+
+            .animate-bottom {
+                animation: slideBottom 1.2s ease-out both;
+            }
+        </style>
+
+        <script>
+        // Bio Toggle Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.read-bio-btn');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-target');
+                    const bio = document.getElementById(targetId);
+
+                    if (bio.classList.contains('hidden')) {
+                        bio.classList.remove('hidden');
+                        btn.innerHTML = 'Hide Bio <span class="arrow text-green-600">^</span>';
+                    } else {
+                        bio.classList.add('hidden');
+                        btn.innerHTML = 'Read Bio <span class="arrow text-green-600">v</span>';
+                    }
+                });
+            });
+        });
+    </script>
 
         {{-- Simple JavaScript --}}
         <script>
