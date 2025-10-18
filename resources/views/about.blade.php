@@ -263,25 +263,7 @@
         </style>
 
         <script>
-        // Bio Toggle Script
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.read-bio-btn');
 
-            buttons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const targetId = btn.getAttribute('data-target');
-                    const bio = document.getElementById(targetId);
-
-                    if (bio.classList.contains('hidden')) {
-                        bio.classList.remove('hidden');
-                        btn.innerHTML = 'Hide Bio <span class="arrow text-green-600">^</span>';
-                    } else {
-                        bio.classList.add('hidden');
-                        btn.innerHTML = 'Read Bio <span class="arrow text-green-600">v</span>';
-                    }
-                });
-            });
-        });
     </script>
 
         {{-- Simple JavaScript --}}
